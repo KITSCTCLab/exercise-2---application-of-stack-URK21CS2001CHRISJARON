@@ -28,13 +28,9 @@ class Evaluate:
 
 
   def push(self, operand):
-    """
-    Push the operand to stack if the stack is not full.
-    Arguments:
-      operand: The operand to be pushed.
-    """
-    # Write your code here
-
+        if not self.is_full():
+            self.top += 1
+            self.items[self.top] = data
 
   def validate_postfix_expression(self, expression):
     """
