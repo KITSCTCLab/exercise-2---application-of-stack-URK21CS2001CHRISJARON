@@ -9,31 +9,22 @@ class Evaluate:
 
 
   def __init__(self, size):
-    """Inits Evaluate with top, size_of_stack and stack.
-    Arguments:
-      size_of_stack: An integer to set the size of stack.
-    """
-    self.top = -1
-    self.size_of_stack = size
-    self.stack = []
-
+        self.items = [None]*size
+        self.size = size
+        self.top = -1
 
   def isEmpty(self):
-    """
-    Check whether the stack is empty.
-    Returns:
-      True if it is empty, else returns False.
-    """
-      # Write your code here
+        if (self.top == -1):
+            return True
+        else:
+            return False
 
 
   def pop(self):
-    """
-    Do pop operation if the stack is not empty.
-    Returns:
-      The data which is popped out if the stack is not empty.
-    """
-    # Write your code here
+        if not self.is_empty():
+            data = self.items[self.top]
+            self.top -= 1
+            return data
 
 
   def push(self, operand):
