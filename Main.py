@@ -1,5 +1,13 @@
+class Evaluate:
+  """This class validates and evaluate postfix expression.
+  Attributes:
+      top: An integer which denotes the index of the element at the top of the stack currently.
+      size_of_stack: An integer which represents the size of stack.
+      stack: A List which acts as a Stack.
+  """
+    # Write your code here
 
-  def _init_(self, size):
+  def __init__(self, size):
     """Inits Evaluate with top, size_of_stack and stack.
     Arguments:
       top:An integer which points to the top most element in the stack.
@@ -95,13 +103,13 @@
           stack[-2] = stack[-2] / stack[-1]
           stack.pop()
         elif i == '^':
-          stack[-2] = stack[-2] ^ stack[-1] 
+          stack[-2] = stack[-2] ^ stack[-1]
           stack.pop()
     return int(stack[-1])
 
 
 # Do not change the following code
-postfix_expression = input()  # Read postfix expression
+postfix_expression = input() # Read postfix expression
 tokens = postfix_expression.split()
 evaluate = Evaluate(len(tokens))
 if evaluate.validate_postfix_expression(tokens):
